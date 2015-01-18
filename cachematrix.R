@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## TODO: Write a short comment describing this function
+## This function wraps a matrix with functions allowing its inverse
+## to be stored and retrieved. These functions are returned as members
+## of a list
+## 
+## Input: invertible matrix
+## Output: a list that wraps the matrix and exposes functions 
+##         set/get, setinverse/getinverse
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
 
@@ -32,7 +35,12 @@ makeCacheMatrix <- function(x = matrix()) {
              getinverse = getinverse)
 }
 
-## TODO: Write a short comment describing this function
+## This function returns the inverse of the matrix in makeCacheMatrix.
+## If the inverse is already cached in makeCacheMatrix, it returns that
+## value, otherwise it calculates the inverse and stored it in makeCacheMatrix.
+##
+## Input: makeCacheMatrix list
+## Output: inverse of matrix wrapped by makeCacheMatrix
 cacheSolve <- function(x, ...) {
         ## Retrieve the cached inverse of the matrix stored in x
         inv <- x$getinverse()
